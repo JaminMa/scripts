@@ -2,8 +2,8 @@
 
 # .bashrc
 echo "Creating/appending .bashrc..."
-sed -i '/# BEGIN OF https:\/\/raw.githubusercontent.com\/JaminMa\/ConfigsForNewTerminals\/master\/.bashrc/,/# END OF https:\/\/raw.githubusercontent.com\/JaminMa\/ConfigsForNewTerminals\/master\/.bashrc/d' ~/.bashrc
-curl -LSs https://raw.githubusercontent.com/JaminMa/ConfigsForNewTerminals/master/.bashrc >> ~/.bashrc
+sed -i '/# BEGIN OF https:\/\/raw.githubusercontent.com\/JaminMa\/dotfiles\/master\/.bashrc/,/# END OF https:\/\/raw.githubusercontent.com\/JaminMa\/dotfiles\/master\/.bashrc/d' ~/.bashrc
+curl -LSs https://raw.githubusercontent.com/JaminMa/dotfiles/master/.bashrc >> ~/.bashrc
 
 # ------
 
@@ -37,7 +37,7 @@ else
 fi
 
 echo "Configuring VIM and installing Pathogen, Syntastic, and Monokai color theme..."
-rm -rf ~/.vimrc && curl -LSs https://raw.githubusercontent.com/JaminMa/ConfigsForNewTerminals/master/.vimrc > ~/.vimrc
+rm -rf ~/.vimrc && curl -LSs https://raw.githubusercontent.com/JaminMa/dotfiles/master/.vimrc > ~/.vimrc
 rm -rf ~/.vim
 mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 cd ~/.vim/bundle && git clone --quiet --depth=1 https://github.com/vim-syntastic/syntastic.git > /dev/null
@@ -47,7 +47,7 @@ mkdir -p ~/.vim/colors && curl -LSso ~/.vim/colors/monokai.vim https://raw.githu
 
 # Git
 echo "Configuring Git..."
-rm -rf ~/.gitconfig && curl -LSs https://raw.githubusercontent.com/JaminMa/ConfigsForNewTerminals/master/.gitconfig > ~/.gitconfig
+rm -rf ~/.gitconfig && curl -LSs https://raw.githubusercontent.com/JaminMa/dotfiles/master/.gitconfig > ~/.gitconfig
 read -p "Please enter your full name for Git config: " gitFullName
 git config --global user.name "$gitFullName"
 read -p "Please enter your email for Git config: " email
